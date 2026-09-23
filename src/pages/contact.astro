@@ -1,0 +1,15 @@
+---
+import Base from '../layouts/Base.astro';
+import { getEntry, render } from 'astro:content';
+const page = await getEntry('pages', 'contact');
+const { Content } = await render(page);
+const d = page.data;
+---
+<Base title="contact" current="contact" description="Contact the QOSS lab at the Universidad Autónoma de Madrid.">
+<div class="post-header"><h1 class="post-title">contact</h1></div>
+<div class="about"><div>
+<div class="prose"><Content /></div>
+<p class="mono" style="margin-top:12px;user-select:all">{d.email}</p>
+<div class="social"><a href="https://scholar.google.com/citations?user=va8R7v0AAAAJ&hl=en">Google Scholar</a><a href="https://orcid.org/0000-0002-9316-4340">ORCID</a><a href="https://www.linkedin.com/in/carlos-ant%C3%B3n-solanas-10656957/">LinkedIn</a><a href="https://bsky.app/profile/cantonso.bsky.social">Bluesky</a></div>
+</div><aside class="profile"><img class="pimg" src={d.photo} alt="Carlos Antón-Solanas" style="aspect-ratio:1"></aside></div>
+</Base>

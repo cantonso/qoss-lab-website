@@ -1,0 +1,12 @@
+---
+import { ABBR, mdi } from '../lib/md.js';
+const { p } = Astro.props;
+const pre = p.year === 'Preprint';
+const authors = p.authors.replace(/(C\. Antón[- ]Solanas)/g, '<b>$1</b>');
+---
+<li><span class={pre ? 'abbr pre' : 'abbr'}>{pre ? 'arXiv' : (ABBR[p.journal] || p.journal)}</span><div>
+<div class="title">{p.url ? <a href={p.url}>{p.title}</a> : p.title}</div>
+<div class="author" set:html={authors}></div>
+<div class="periodical">{pre ? p.journal : `${p.journal} ${p.volume || ''}`}</div>
+{p.url && <div class="links"><a href={p.url}>{pre ? 'arXiv' : 'paper'}</a></div>}
+</div></li>

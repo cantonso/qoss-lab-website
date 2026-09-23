@@ -1,0 +1,54 @@
+---
+import '../styles/global.css';
+const { title = 'QOSS lab', description = 'QOSS lab — Quantum Optics in the Solid State. Experimental quantum photonics with solid-state quantum emitters at the Universidad Autónoma de Madrid (SemicUAM · IFIMAC · INC).', current = '', lang = 'en' } = Astro.props;
+const nav = [['about','/'],['research','/research/'],['people','/people/'],['publications','/publications/'],['news','/news/'],['teaching','/teaching/'],['outreach','/outreach/'],['join us','/join/'],['contact','/contact/']];
+const fullTitle = title === 'QOSS lab' ? 'QOSS lab — Quantum Optics in the Solid State' : `${title} · QOSS lab`;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+<!doctype html>
+<html lang={lang}>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{fullTitle}</title>
+<meta name="description" content={description}>
+<link rel="canonical" href={canonical}>
+<meta property="og:title" content={fullTitle}>
+<meta property="og:description" content={description}>
+<meta property="og:type" content="website">
+<meta property="og:url" content={canonical}>
+<meta property="og:image" content={new URL('/img/banner-lab.jpg', Astro.site)}>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Roboto+Mono:wght@400;500&display=swap">
+<script is:inline>try{const t=localStorage.getItem('qoss-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/"><i class="dot" aria-hidden="true"></i><b>QOSS</b><span>lab</span></a>
+    <button class="icon-btn menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav" aria-label="Open menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <nav class="main" id="mainNav" aria-label="Main">
+      {nav.map(([l,h]) => <a href={h} aria-current={current === l ? 'page' : undefined}>{l}</a>)}
+      <button class="icon-btn" id="themeBtn" aria-label="Switch light or dark mode" title="Light / dark">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+<main id="main" class="wrap"><slot /></main>
+<footer class="site">
+  <p>© {new Date().getFullYear()} QOSS lab — Quantum Optics in the Solid State · SemicUAM group, Department of Physics of Materials, Universidad Autónoma de Madrid · IFIMAC · Instituto Nicolás Cabrera</p>
+</footer>
+<script is:inline>
+const nav=document.getElementById('mainNav'),mb=document.getElementById('menuBtn');
+mb.addEventListener('click',()=>{const o=nav.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
+document.getElementById('themeBtn').addEventListener('click',()=>{const r=document.documentElement,cur=r.dataset.theme||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');r.dataset.theme=cur==='dark'?'light':'dark';try{localStorage.setItem('qoss-theme',r.dataset.theme)}catch(e){}});
+document.querySelectorAll('main a[href^="http"]').forEach(a=>{a.target='_blank';a.rel='noopener'});
+</script>
+</body>
+</html>

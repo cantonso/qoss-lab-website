@@ -1,0 +1,22 @@
+---
+import Base from '../layouts/Base.astro';
+import { getEntry, render } from 'astro:content';
+import team from '../data/team.json';
+import alumni from '../data/alumni.json';
+import visitors from '../data/visitors.json';
+import { mdi } from '../lib/md.js';
+const page = await getEntry('pages', 'people');
+const { Content } = await render(page);
+const d = page.data;
+---
+<Base title="people" current="people" description={d.description}>
+<div class="post-header"><h1 class="post-title">people</h1><p class="desc">{d.description}</p></div>
+<h2 class="sec" style="margin-top:8px">QOSS team</h2>
+<div class="team">
+<div class="member"><img class="mimg" src={d.pi_photo} alt={d.pi_name}><div><h3>{d.pi_name}</h3><div class="role">{d.pi_role}</div><div class="prose" style="margin-top:6px;color:var(--muted);font-size:15px"><Content /></div>
+<div class="social"><a href="https://scholar.google.com/citations?user=va8R7v0AAAAJ&hl=en">Google Scholar</a><a href="https://orcid.org/0000-0002-9316-4340">ORCID</a><a href="https://www.linkedin.com/in/carlos-ant%C3%B3n-solanas-10656957/">LinkedIn</a><a href="https://bsky.app/profile/cantonso.bsky.social">Bluesky</a></div></div></div>
+{team.map(p => <div class="member"><img class="mimg" src={p.photo} alt={p.name} loading="lazy"><div><h3>{p.name}</h3><div class="role">{p.role}</div><p set:html={mdi(p.bio)}></p></div></div>)}
+</div>
+<h2 class="sec">alumni</h2><ul class="plain">{alumni.map(a => <li><b style="font-weight:500">{a.name}</b> <span set:html={'— ' + mdi(a.details)}></span></li>)}</ul>
+<h2 class="sec">former visitors</h2><ul class="plain">{visitors.map(a => <li><b style="font-weight:500">{a.name}</b> <span set:html={'— ' + mdi(a.details)}></span></li>)}</ul>
+</Base>

@@ -1,0 +1,132 @@
+# Pages CMS configuration — https://app.pagescms.org
+media:
+  input: public/img
+  output: /img
+  categories: [image]
+content:
+  - name: news
+    label: News
+    type: file
+    path: src/data/news.json
+    format: json
+    list: true
+    fields:
+      - { name: date, label: "Date (YYYY-MM)", type: string, required: true, description: "Year and month, e.g. 2026-10. The list is sorted automatically, newest first." }
+      - { name: text, label: Text, type: rich-text, required: true }
+  - name: publications
+    label: Publications
+    type: file
+    path: src/data/publications.json
+    format: json
+    list: true
+    fields:
+      - { name: year, label: "Year (or Preprint)", type: string, required: true }
+      - { name: title, label: Title, type: string, required: true }
+      - { name: authors, label: Authors, type: text, required: true }
+      - { name: journal, label: "Journal (or arXiv number)", type: string }
+      - { name: volume, label: "Volume, page (year)", type: string }
+      - { name: url, label: "Link (DOI or arXiv)", type: string }
+  - name: team
+    label: People — current team
+    type: file
+    path: src/data/team.json
+    format: json
+    list: true
+    fields:
+      - { name: name, label: Name, type: string, required: true }
+      - { name: role, label: Role, type: string }
+      - { name: photo, label: Photo (square), type: image }
+      - { name: bio, label: Short bio, type: rich-text }
+  - name: alumni
+    label: People — alumni
+    type: file
+    path: src/data/alumni.json
+    format: json
+    list: true
+    fields:
+      - { name: name, label: Name, type: string, required: true }
+      - { name: details, label: Details, type: rich-text }
+  - name: visitors
+    label: People — former visitors
+    type: file
+    path: src/data/visitors.json
+    format: json
+    list: true
+    fields:
+      - { name: name, label: Name, type: string, required: true }
+      - { name: details, label: Details, type: rich-text }
+  - name: seminars
+    label: Hosted seminars
+    type: file
+    path: src/data/seminars.json
+    format: json
+    list: true
+    fields:
+      - { name: date, label: Date, type: date }
+      - { name: speaker, label: "Speaker (affiliation)", type: string, required: true }
+      - { name: title, label: Title, type: string, required: true }
+      - { name: url, label: Link (optional), type: string }
+  - name: hardware
+    label: Open hardware (3D-printed pieces)
+    type: file
+    path: src/data/hardware.json
+    format: json
+    list: true
+    fields:
+      - { name: title, label: Title, type: string }
+      - { name: url, label: Download link, type: string }
+  - name: projects
+    label: Projects
+    type: collection
+    path: src/content/projects
+    format: yaml-frontmatter
+    view:
+      fields: [title, full_title]
+    fields:
+      - { name: title, label: Acronym, type: string, required: true }
+      - { name: full_title, label: Full title, type: string }
+      - { name: order, label: Order on the page, type: number }
+      - { name: role, label: "Your role (PI, co-PI, Coordinator…)", type: string }
+      - { name: summary, label: One-line summary, type: text }
+      - { name: funding, label: Funding line on the card, type: string }
+      - { name: card_image, label: Card image, type: image }
+      - { name: image, label: Header image, type: image }
+      - { name: image_alt, label: Header image description, type: string }
+      - { name: caption, label: Header image caption, type: text }
+      - name: facts
+        label: Key facts
+        type: object
+        list: true
+        fields:
+          - { name: label, type: string }
+          - { name: value, type: string }
+      - { name: objectives, label: Objectives, type: string, list: true }
+      - name: partners
+        label: Consortium partners
+        type: object
+        list: true
+        fields:
+          - { name: name, type: string }
+          - { name: country, type: string }
+      - name: meetings
+        label: Meeting photos
+        type: object
+        list: true
+        fields:
+          - { name: image, type: image }
+          - { name: caption, type: text }
+      - { name: related_publications, label: "Related publications (exact titles)", type: string, list: true }
+      - { name: website, label: Project website, type: string }
+      - { name: acknowledgment, label: Funding acknowledgment, type: text }
+      - { name: body, label: About the project, type: rich-text }
+  - name: pages
+    label: Page texts
+    type: collection
+    path: src/content/pages
+    format: yaml-frontmatter
+    view:
+      fields: [title]
+    fields:
+      - { name: title, label: Title, type: string }
+      - { name: description, label: Subtitle / description, type: text }
+      - { name: body, label: Text, type: rich-text }

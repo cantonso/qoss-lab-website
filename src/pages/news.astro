@@ -1,0 +1,10 @@
+---
+import Base from '../layouts/Base.astro';
+import NewsTable from '../components/NewsTable.astro';
+import news from '../data/news.json';
+import { byDateDesc } from '../lib/md.js';
+---
+<Base title="news" current="news" description="News from the QOSS lab: papers, awards, arrivals and events.">
+<div class="post-header"><h1 class="post-title">news</h1><p class="desc">Papers, awards, arrivals and events.</p></div>
+<NewsTable items={[...news].sort(byDateDesc)} />
+</Base>

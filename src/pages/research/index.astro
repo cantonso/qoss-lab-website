@@ -1,0 +1,26 @@
+---
+import Base from '../../layouts/Base.astro';
+import ProjectCards from '../../components/ProjectCards.astro';
+import { getEntry, getCollection, render } from 'astro:content';
+import seminars from '../../data/seminars.json';
+import hardware from '../../data/hardware.json';
+import { mdi, fmtDay, byDateDesc } from '../../lib/md.js';
+const intro = await getEntry('pages', 'research');
+const lab = await getEntry('pages', 'research-lab');
+const { Content: Intro } = await render(intro);
+const { Content: Lab } = await render(lab);
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+---
+<Base title="research" current="research" description={intro.data.description}>
+<div class="post-header"><h1 class="post-title">research</h1><p class="desc">{intro.data.description}</p></div>
+<div class="prose"><Intro /></div>
+<h2 class="sec">projects</h2>
+<ProjectCards />
+<div class="projtext">{projects.map(p => <p><a href={`/research/${p.id}/`}><b>{p.data.title}</b></a> <span class="muted">({p.data.role})</span> — <span set:html={mdi(p.data.summary)} /></p>)}</div>
+<div class="prose"><Lab /></div>
+<h2 class="sec">open hardware</h2>
+<p>3D-printed optomechanics designed by <a href="https://www.uam.es/ciencias/en/facultad/fisica-materiales/personal/fabiola-mogollon">Fabiola Mogollón</a>, mechanical engineering technician of our department. Click to download the designs:</p>
+<ul class="plain" style="margin-top:8px">{hardware.map(h => <li><a href={h.url}>{h.title}</a></li>)}</ul>
+<h2 class="sec">hosted seminars</h2>
+<table class="news"><tbody>{[...seminars].sort(byDateDesc).map(s => <tr><th scope="row" class="mono">{fmtDay(s.date)}</th><td>{s.speaker}: {s.url ? <a href={s.url}>“{s.title}”</a> : `“${s.title}”`}</td></tr>)}</tbody></table>
+</Base>

@@ -1,0 +1,15 @@
+---
+import Base from '../layouts/Base.astro';
+import Bib from '../components/Bib.astro';
+import pubs from '../data/publications.json';
+const years = [...new Set(pubs.map(p => p.year))].sort((a, b) => (a === 'Preprint' ? -1 : b === 'Preprint' ? 1 : b.localeCompare(a)));
+---
+<Base title="publications" current="publications" description="Publications and preprints of the QOSS lab.">
+<div class="post-header"><h1 class="post-title">publications</h1><p class="desc">Recent work. The complete list is on <a href="https://scholar.google.com/citations?user=va8R7v0AAAAJ&hl=en">Google Scholar</a> and <a href="https://orcid.org/0000-0002-9316-4340">ORCID</a>.</p></div>
+<div class="pills" role="group" aria-label="Filter by year"><button aria-pressed="true" data-y="all">all</button>{years.map(y => <button aria-pressed="false" data-y={y}>{y.toLowerCase()}</button>)}</div>
+{years.map(y => <section data-year={y}><h2 class="year">{y === 'Preprint' ? 'preprints' : y}</h2><ol class="bib">{pubs.filter(p => p.year === y).map(p => <Bib p={p} />)}</ol></section>)}
+<p class="aside">👉 Special issue on <a href="https://opg.optica.org/ome/virtual_issue.cfm?vid=565">“Polaritonics”</a> in Optical Materials Express, with lead editor <a href="https://grossolab.ws.gc.cuny.edu">Gabrielle Grosso</a> (CUNY) and editors <a href="http://polariton.fuw.edu.pl">Barbara Pietka</a> (Warsaw), <a href="https://fisica.cab.cnea.gov.ar/pop/">Alejandro Fainstein</a> (Bariloche), <a href="https://polaritonics.nanotec.cnr.it">Dario Ballarini</a> (CNR) and Carlos.</p>
+<script is:inline>
+const b=document.querySelectorAll('.pills button');b.forEach(x=>x.addEventListener('click',()=>{b.forEach(y=>y.setAttribute('aria-pressed',y===x));document.querySelectorAll('section[data-year]').forEach(s=>s.hidden=!(x.dataset.y==='all'||s.dataset.year===x.dataset.y))}));
+</script>
+</Base>

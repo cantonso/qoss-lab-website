@@ -1,0 +1,4 @@
+---
+const { en, es, active } = Astro.props;
+---
+<div class="langtog" role="group" aria-label="Language"><a href={en} aria-current={active === 'en' ? 'true' : undefined}>English</a><a href={es} aria-current={active === 'es' ? 'true' : undefined}>Español</a></div>

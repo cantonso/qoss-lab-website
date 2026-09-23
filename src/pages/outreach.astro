@@ -1,0 +1,10 @@
+---
+import Base from '../layouts/Base.astro';
+import { getEntry, render } from 'astro:content';
+const page = await getEntry('pages', 'outreach');
+const { Content } = await render(page);
+---
+<Base title="outreach" current="outreach" description={page.data.description}>
+<div class="post-header"><h1 class="post-title">outreach</h1><p class="desc">{page.data.description}</p></div>
+<div class="prose outreach"><Content /></div>
+</Base>

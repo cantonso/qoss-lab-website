@@ -1,0 +1,20 @@
+---
+import Base from '../../../layouts/Base.astro';
+import LangBar from '../../../components/LangBar.astro';
+import { getEntry, render } from 'astro:content';
+import { mdi, md } from '../../../lib/md.js';
+const page = await getEntry('pages', 'join-es');
+const { Content } = await render(page);
+const d = page.data;
+---
+<Base title={d.title} current="join us" lang="es" description="PhD positions and fellowships to join the QOSS lab at UAM.">
+<LangBar en="/join/" es="/join/es/" active="es" />
+<div class="post-header"><h1 class="post-title">{d.title}</h1><p class="desc" set:html={mdi(d.description)}></p></div>
+{d.callout_title && <section class="callout">
+<p class="eyebrow">{d.callout_label}</p>
+<h2>{d.callout_title}</h2>
+<div set:html={md(d.callout_text)}></div>
+<div class="two" style="margin-top:14px">{(d.callout_boxes || []).map(b => <div class="fund"><h3 set:html={mdi(b.title)}></h3><p set:html={mdi(b.text)}></p></div>)}</div>
+</section>}
+<div class="prose"><Content /></div>
+</Base>

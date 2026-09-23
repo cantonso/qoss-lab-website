@@ -1,0 +1,7 @@
+---
+import { mdi, fmtMonth } from '../lib/md.js';
+const { items } = Astro.props;
+---
+<table class="news"><tbody>
+{items.map(n => <tr><th scope="row">{fmtMonth(n.date)}</th><td set:html={mdi(n.text)}></td></tr>)}
+</tbody></table>

@@ -1,0 +1,40 @@
+---
+import Base from '../layouts/Base.astro';
+import NewsTable from '../components/NewsTable.astro';
+import Bib from '../components/Bib.astro';
+import ProjectCards from '../components/ProjectCards.astro';
+import { getEntry, render } from 'astro:content';
+import news from '../data/news.json';
+import pubs from '../data/publications.json';
+import { byDateDesc } from '../lib/md.js';
+const page = await getEntry('pages', 'home');
+const { Content } = await render(page);
+const d = page.data;
+const years = pubs.map(p => p.year).filter(y => /^\d{4}$/.test(y)).sort().reverse();
+const latest = pubs.filter(p => p.year === years[0]);
+const scholar = 'https://scholar.google.com/citations?user=va8R7v0AAAAJ&hl=en';
+---
+<Base current="about">
+<div class="post-header"><h1 class="post-title"><b>Quantum Optics</b> in the Solid State</h1><p class="desc">{d.subtitle}</p></div>
+<figure class="banner" style="margin-inline:0"><img class="bimg" src={d.banner_image} alt="Optical setup in the QOSS laboratory"><figcaption class="cap"><strong>{d.banner_caption}</strong><span>QOSS lab · UAM Madrid</span></figcaption></figure>
+<div class="about">
+  <div class="prose"><Content /></div>
+  <aside class="profile"><div class="address" style="margin-top:0">Contact:<br>Dept. Physics of Materials<br>Faculty of Science<br>Univ. Autónoma de Madrid<br>28049 Madrid, Spain<br>carlos.anton [at] uam.es</div>
+  <div class="social"><a href={scholar}>Google Scholar</a><a href="https://www.linkedin.com/in/carlos-ant%C3%B3n-solanas-10656957/">LinkedIn</a><a href="https://bsky.app/profile/cantonso.bsky.social">Bluesky</a><a href="https://orcid.org/0000-0002-9316-4340">ORCID</a></div></aside>
+</div>
+<h2 class="sec">single photons, in pixels</h2>
+<figure class="hbt"><canvas id="hbt" width="240" height="84" role="img" aria-label="Pixel-art animation: a quantum dot emits single photons toward a 50:50 beamsplitter; each photon clicks one of two detectors, and the coincidence histogram shows a missing peak at zero delay"></canvas>
+<figcaption>A quantum dot emits <b>one photon per laser pulse</b>. At the beamsplitter it goes one way or the other — never both — so D1 and D2 never click in the same pulse. That is the missing peak at zero delay: <b>g⁽²⁾(0) ≈ 0</b>, the <a href="https://en.wikipedia.org/wiki/Hanbury_Brown_and_Twiss_effect">Hanbury Brown–Twiss</a> signature of a single-photon source.</figcaption></figure>
+<h2 class="sec">two photons, one beamsplitter</h2>
+<figure class="hbt"><canvas id="hom" width="240" height="84" role="img" aria-label="Pixel-art animation of Hong-Ou-Mandel interference"></canvas>
+<figcaption>Two photons of random colour enter a 50:50 beamsplitter from different sides. When they are <b>identical</b> (same colour), their paths interfere and they always <b>leave together</b> — D1 and D2 never click at the same time. When they are <b>distinguishable</b> (different colours), each one chooses independently: 25% both transmitted, 25% both reflected, 25% both to D1, 25% both to D2 — so half of the time you get a coincidence. That missing coincidence for identical photons is the <a href="https://en.wikipedia.org/wiki/Hong%E2%80%93Ou%E2%80%93Mandel_effect">Hong–Ou–Mandel effect</a>, our everyday test of photon indistinguishability.</figcaption></figure>
+<h2 class="sec">news <a href="/news/">all news →</a></h2>
+<NewsTable items={[...news].sort(byDateDesc).slice(0, 6)} />
+<h2 class="sec">selected publications <a href="/publications/">all publications →</a></h2>
+<ol class="bib">{latest.map(p => <Bib p={p} />)}</ol>
+<h2 class="sec">current projects <a href="/research/">research →</a></h2>
+<ProjectCards />
+<script is:inline src="/js/hbt.js"></script>
+<script is:inline src="/js/hom.js"></script>
+<script is:inline>startHBT();startHOM();</script>
+</Base>

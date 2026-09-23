@@ -1,0 +1,25 @@
+---
+import Base from '../../layouts/Base.astro';
+import Bib from '../../components/Bib.astro';
+import { getCollection, render } from 'astro:content';
+import pubs from '../../data/publications.json';
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map(p => ({ params: { slug: p.id }, props: { p } }));
+}
+const { p } = Astro.props;
+const d = p.data;
+const { Content } = await render(p);
+const related = (d.related_publications || []).map(t => pubs.find(x => x.title === t)).filter(Boolean);
+---
+<Base title={d.title} current="research" description={d.full_title}>
+<div class="post-header"><p class="desc" style="margin:0 0 6px"><a href="/research/">← research</a></p><h1 class="post-title"><b>{d.title}</b></h1><p class="desc">{d.full_title}</p></div>
+<div class="projhead"><figure style="margin:0"><img class="wimg" style="aspect-ratio:auto;object-fit:contain;background:#fff" src={d.image} alt={d.image_alt}><figcaption class="muted" style="font-size:13px;margin-top:8px">{d.caption}</figcaption></figure>
+<dl class="facts">{(d.facts || []).map(f => <><dt>{f.label}</dt><dd>{f.value}</dd></>)}{d.website && <><dt>Website</dt><dd><a href={d.website}>Project website</a></dd></>}</dl></div>
+<h2 class="sec">about the project</h2><div class="prose"><Content /></div>
+<h2 class="sec">objectives</h2><ul class="plain">{(d.objectives || []).map(g => <li>{g}</li>)}</ul>
+{d.partners && <><h2 class="sec">consortium</h2><ul class="plain">{d.partners.map(x => <li>{x.name} <span>— {x.country}</span></li>)}</ul></>}
+{d.meetings && <><h2 class="sec">meetings</h2><div class="two">{d.meetings.map(m => <figure style="margin:0"><img class="wimg" src={m.image} alt="Consortium meeting" loading="lazy"><figcaption class="muted" style="font-size:13px;margin-top:8px">{m.caption}</figcaption></figure>)}</div></>}
+{related.length > 0 && <><h2 class="sec">related publications</h2><ol class="bib">{related.map(x => <Bib p={x} />)}</ol></>}
+<p class="aside">{d.acknowledgment}</p>
+</Base>
