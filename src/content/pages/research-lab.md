@@ -30,3 +30,5 @@ Techniques: micro-photoluminescence (cryogenic and room temperature); Michelson 
 - [Eilenberger group](https://www.iap.uni-jena.de/eilenberger) — FSU Jena (Germany)
 - [Bao group](https://ncmn.unl.edu/faculty/bao) — Univ. Nebraska-Lincoln (USA)
 - [Ateş group](https://nqo.iyte.edu.tr) — İzmir Institute of Technology (Türkiye)
+- [Aymeric Delteil](https://www.gemac.uvsq.fr/m-aymeric-delteil) — [Nanostructures & colour centres team](https://www.gemac.uvsq.fr/nanostructures-centres-colores), GEMaC, CNRS / UVSQ, Université Paris-Saclay (France)
+- [Zhiliang Yuan](http://en.baqis.ac.cn/people/detail/?cid=1193) — Beijing Academy of Quantum Information Sciences (China)

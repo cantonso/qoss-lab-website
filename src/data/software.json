@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Codes for publications",
+    "description": "Code used to generate the figures and simulations in our papers",
+    "url": "https://github.com/QOSS-UAM/Codes_for_publications"
+  },
+  {
+    "title": "hBN experiments",
+    "description": "Instrument control and data analysis for our hBN experiments",
+    "url": "https://github.com/QOSS-UAM/hBN_experiments"
+  },
+  {
+    "title": "TMDC experiments",
+    "description": "Instrument control and data analysis for our 2D-semiconductor (TMDC) experiments",
+    "url": "https://github.com/QOSS-UAM/TMDC_experiments"
+  }
+]

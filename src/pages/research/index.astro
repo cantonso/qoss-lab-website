@@ -4,6 +4,7 @@ import ProjectCards from '../../components/ProjectCards.astro';
 import { getEntry, getCollection, render } from 'astro:content';
 import seminars from '../../data/seminars.json';
 import hardware from '../../data/hardware.json';
+import software from '../../data/software.json';
 import { mdi, fmtDay, byDateDesc } from '../../lib/md.js';
 const intro = await getEntry('pages', 'research');
 const lab = await getEntry('pages', 'research-lab');
@@ -21,6 +22,9 @@ const projects = (await getCollection('projects')).sort((a, b) => a.data.order -
 <h2 class="sec">open hardware</h2>
 <p>3D-printed optomechanics designed by <a href="https://www.uam.es/ciencias/en/facultad/fisica-materiales/personal/fabiola-mogollon">Fabiola Mogollón</a>, mechanical engineering technician of our department. Click to download the designs:</p>
 <ul class="plain" style="margin-top:8px">{hardware.map(h => <li><a href={h.url}>{h.title}</a></li>)}</ul>
+<h2 class="sec">open software</h2>
+<p>Our tools for instrument control, data analysis and modelling are shared on GitHub at <a href="https://github.com/QOSS-UAM">github.com/QOSS-UAM</a>:</p>
+<ul class="plain" style="margin-top:8px">{software.map(s => <li><a href={s.url}>{s.title}</a>{s.description && <span> — {s.description}</span>}</li>)}</ul>
 <h2 class="sec">hosted seminars</h2>
 <table class="news"><tbody>{[...seminars].sort(byDateDesc).map(s => <tr><th scope="row" class="mono">{fmtDay(s.date)}</th><td>{s.speaker}: {s.url ? <a href={s.url}>“{s.title}”</a> : `“${s.title}”`}</td></tr>)}</tbody></table>
 </Base>

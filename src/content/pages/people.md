@@ -1,6 +1,6 @@
 ---
 title: "people"
-description: "The QOSS team is part of the SemicUAM group at the Department of Physics of Materials, UAM, and is affiliated with the Instituto Nicolás Cabrera and IFIMAC. We work closely with Prof. Luis Viña and the rest of our SemicUAM colleagues."
+description: "The QOSS team is part of the SemicUAM group at the Department of Physics of Materials, UAM, and is affiliated with the Instituto Nicolás Cabrera and IFIMAC."
 pi_name: "Carlos Antón-Solanas"
 pi_role: "QOSS research line · PI of POEM, co-PI of ECO-Q, coordinator of COMPHORT"
 pi_photo: "/img/carlos.jpg"
