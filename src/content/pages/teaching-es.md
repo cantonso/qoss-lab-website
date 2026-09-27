@@ -41,6 +41,7 @@ Bibliografía: Steck, [Quantum and Atom Optics](http://atomoptics.uoregon.edu/~d
 
 Escríbenos si quieres hacer tu TFG o TFM con experimentos de óptica cuántica — el mejor momento es durante 3.º (TFG) o 4.º curso (TFM). Temas que ofrecemos cada año:
 
+- **Fotones entrelazados con una fuente Sagnac de ppKTP** — conversión paramétrica espontánea descendente en un interferómetro de Sagnac en polarización: estados de Bell entrelazados en polarización y test CHSH de la desigualdad de Bell, fotones individuales anunciados y su pureza (g⁽²⁾ frente a la potencia de bombeo, emisión multipar), compromiso entre brillo y pureza
 - **Emisión de fotones individuales en defectos de hBN** — micro-fotoluminiscencia y medidas cuánticas de la luz como el experimento de [Hanbury Brown–Twiss](https://en.wikipedia.org/wiki/Hanbury_Brown_and_Twiss_effect)
 - **Electrodinámica cuántica en cavidades a temperatura ambiente** — acoplamiento de emisores de fotones individuales a una cavidad abierta; emisión espontánea acelerada por efecto Purcell
 - **Fotónica topológica** — interacción luz-materia en redes micrométricas de semiconductores: polarización, coherencia y más

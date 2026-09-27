@@ -41,6 +41,7 @@ Bibliography: Steck, [Quantum and Atom Optics](http://atomoptics.uoregon.edu/~ds
 
 Contact us if you'd like to do your TFG or TFM on quantum optics experiments — the best moment is during your 3rd (TFG) or 4th (TFM) year. Topics offered every year:
 
+- **Entangled photons from a ppKTP Sagnac source** — spontaneous parametric down-conversion in a polarisation Sagnac interferometer: polarisation-entangled Bell states and a CHSH test of Bell's inequality, heralded single photons and their purity (g⁽²⁾ vs pump power, multi-pair emission), brightness–purity trade-offs
 - **Single-photon emission from hBN defects** — micro-photoluminescence and quantum measurements of light such as the [Hanbury Brown–Twiss](https://en.wikipedia.org/wiki/Hanbury_Brown_and_Twiss_effect) experiment
 - **Cavity QED at room temperature** — coupling single-photon emitters to an open cavity; Purcell-enhanced spontaneous emission
 - **Topological photonics** — light–matter interaction in micrometric semiconductor lattices: polarisation, coherence and more
