@@ -1,0 +1,19 @@
+---
+const { lang = 'en' } = Astro.props;
+const es = lang === 'es';
+---
+<h2 class="sec">{es ? 'fotones individuales, en píxeles' : 'single photons, in pixels'}</h2>
+<figure class="hbt"><canvas id="hbt" width="240" height="84" role="img" aria-label="Pixel-art animation: a quantum dot emits single photons toward a 50:50 beamsplitter; each photon clicks one of two detectors, and the coincidence histogram shows a missing peak at zero delay"></canvas>
+{es
+ ? <figcaption>Un punto cuántico emite <b>un fotón por pulso láser</b>. En el divisor de haz va por un camino o por el otro — nunca por los dos —, así que D1 y D2 nunca hacen clic en el mismo pulso. Ese es el pico que falta en retardo cero: <b>g⁽²⁾(0) ≈ 0</b>, la firma <a href="https://en.wikipedia.org/wiki/Hanbury_Brown_and_Twiss_effect">Hanbury Brown–Twiss</a> de una fuente de fotones individuales.</figcaption>
+ : <figcaption>A quantum dot emits <b>one photon per laser pulse</b>. At the beamsplitter it goes one way or the other — never both — so D1 and D2 never click in the same pulse. That is the missing peak at zero delay: <b>g⁽²⁾(0) ≈ 0</b>, the <a href="https://en.wikipedia.org/wiki/Hanbury_Brown_and_Twiss_effect">Hanbury Brown–Twiss</a> signature of a single-photon source.</figcaption>}
+</figure>
+<h2 class="sec">{es ? 'dos fotones, un divisor de haz' : 'two photons, one beamsplitter'}</h2>
+<figure class="hbt"><canvas id="hom" width="240" height="84" role="img" aria-label="Pixel-art animation of Hong-Ou-Mandel interference"></canvas>
+{es
+ ? <figcaption>Dos fotones de color aleatorio entran en un divisor de haz 50:50 por lados distintos. Cuando son <b>idénticos</b> (mismo color), sus caminos interfieren y siempre <b>salen juntos</b>: D1 y D2 nunca hacen clic a la vez. Cuando son <b>distinguibles</b> (colores distintos), cada uno elige por su cuenta: 25 % ambos transmitidos, 25 % ambos reflejados, 25 % ambos a D1, 25 % ambos a D2 — así que la mitad de las veces hay coincidencia. Esa coincidencia que falta para fotones idénticos es el <a href="https://en.wikipedia.org/wiki/Hong%E2%80%93Ou%E2%80%93Mandel_effect">efecto Hong–Ou–Mandel</a>, nuestra prueba diaria de indistinguibilidad de fotones.</figcaption>
+ : <figcaption>Two photons of random colour enter a 50:50 beamsplitter from different sides. When they are <b>identical</b> (same colour), their paths interfere and they always <b>leave together</b> — D1 and D2 never click at the same time. When they are <b>distinguishable</b> (different colours), each one chooses independently: 25% both transmitted, 25% both reflected, 25% both to D1, 25% both to D2 — so half of the time you get a coincidence. That missing coincidence for identical photons is the <a href="https://en.wikipedia.org/wiki/Hong%E2%80%93Ou%E2%80%93Mandel_effect">Hong–Ou–Mandel effect</a>, our everyday test of photon indistinguishability.</figcaption>}
+</figure>
+<script is:inline src="/js/hbt.js"></script>
+<script is:inline src="/js/hom.js"></script>
+<script is:inline>startHBT();startHOM();</script>
