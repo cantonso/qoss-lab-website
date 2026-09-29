@@ -1,7 +1,15 @@
 ---
 title: "outreach"
-description: "Public talks, media, and a single-photon source travelling across Europe."
+description: "Public talks, media, awards, and a single-photon source travelling across Europe."
 ---
+
+## Impact of QuantERA award
+
+For its 10th anniversary, the QuantERA programme invited its projects to tell their story in the [IQ – Impact of QuantERA](https://quantera.eu/iq-impact-of-quantera/) action. Our video [“Impact of QuantERA: COMPHORT”](https://www.youtube.com/watch?v=tvIevKF8-ns) presents the seven-partner COMPHORT consortium and our quest for a simple, reliable single-photon source working at room temperature for secure quantum communications.
+
+On 29 September 2026, at the QuantERA Strategic Conference in Basel, COMPHORT received the **Social Media Impact** award, given to the project whose IQ story reached and engaged the widest audience.
+
+![Award ceremony of the IQ – Impact of QuantERA action in Basel, with COMPHORT announced as winner of the Social Media Impact award](/img/quantera-iq-award.jpg)
 
 ## Hackers vs Photon Messengers
 
@@ -23,6 +31,7 @@ We took part in the DPG activity [QuanTour](https://www.quantum2025.de/quantour)
 
 ## in the media
 
+- [“Impact of QuantERA: COMPHORT”](https://www.youtube.com/watch?v=tvIevKF8-ns) — QuantERA (YouTube), Social Media Impact award 2026
 - [“QuanTour: Iluminando Europa con fotones individuales”](https://revistadefisica.es/index.php/ref/issue/archive) — Revista Española de Física
 - [“221. Hot Single Photons for Quantum Communications”](https://www.youtube.com/watch?v=Jtp48ChGNyA) — The Science Talk podcast
 - [“Así funciona la antorcha cuántica que viaja en tren por Europa”](https://theconversation.com/asi-funciona-la-antorcha-cuantica-que-viaja-en-tren-por-europa-232430) — The Conversation
