@@ -10,5 +10,23 @@
     "role": "FPI-IFIMAC PhD student",
     "photo": "/img/christos.jpg",
     "bio": "BSc Physics, MSc Applied & Engineering Physics (TUM). Thesis: “Photon correlation of interlayer excitons in moiré heterobilayers”, co-directed with [María Dolores Martín](https://portalcientifico.uam.es/es/ipublic/researcher/261228)."
+  },
+  {
+    "name": "Izan",
+    "role": "TFG student",
+    "photo": "/img/izan.jpg",
+    "bio": "TFG 26–27: “Emission of single photons from defects in hexagonal boron nitride”, co-directed with Juan Vicente Vidal Martínez-Pons."
+  },
+  {
+    "name": "Samuel Palacios Valdepeñas",
+    "role": "TFG student",
+    "photo": "",
+    "bio": "[INC Prize 2026](https://www.inc.uam.es/wp-content/uploads/2026/07/260619_ActaComisionEvaluacion-1.pdf) for the research work “Experimental characterization of second harmonic generation in TMD monolayers”. TFG 26–27: “Generation and characterization of polarization-entangled photons via spontaneous parametric down-conversion in a nonlinear crystal in a Sagnac configuration”, co-directed with Juan Vicente Vidal Martínez-Pons."
+  },
+  {
+    "name": "Sofía",
+    "role": "TFG student",
+    "photo": "",
+    "bio": "TFG 26–27: “Pump-power dependence of the purity of a heralded single-photon source based on spontaneous parametric down-conversion”, co-directed with Juan Vicente Vidal Martínez-Pons."
   }
 ]
