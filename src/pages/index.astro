@@ -12,15 +12,13 @@ const { Content } = await render(page);
 const d = page.data;
 const years = pubs.map(p => p.year).filter(y => /^\d{4}$/.test(y)).sort().reverse();
 const latest = pubs.filter(p => p.year === years[0]);
-const scholar = 'https://scholar.google.com/citations?user=va8R7v0AAAAJ&hl=en';
 ---
 <Base current="about">
 <div class="post-header"><h1 class="post-title"><b>Quantum Optics</b> in the Solid State</h1><p class="desc">{d.subtitle}</p></div>
 <figure class="banner" style="margin-inline:0"><img class="bimg" src={d.banner_image} alt="Optical setup in the QOSS laboratory"><figcaption class="cap"><strong>{d.banner_caption}</strong><span>QOSS lab · UAM Madrid</span></figcaption></figure>
 <div class="about">
   <div class="prose"><Content /></div>
-  <aside class="profile"><div class="address" style="margin-top:0">Contact:<br>Dept. Physics of Materials<br>Faculty of Science<br>Univ. Autónoma de Madrid<br>28049 Madrid, Spain<br>carlos.anton [at] uam.es</div>
-  <div class="social"><a href={scholar}>Google Scholar</a><a href="https://www.linkedin.com/in/carlos-ant%C3%B3n-solanas-10656957/">LinkedIn</a><a href="https://bsky.app/profile/cantonso.bsky.social">Bluesky</a><a href="https://orcid.org/0000-0002-9316-4340">ORCID</a></div></aside>
+  <aside class="profile"><div class="address" style="margin-top:0">Contact:<br>Dept. Physics of Materials<br>Faculty of Science<br>Univ. Autónoma de Madrid<br>28049 Madrid, Spain<br>carlos.anton [at] uam.es</div></aside>
 </div>
 <h2 class="sec">news <a href="/news/">all news →</a></h2>
 <NewsTable items={[...news].sort(byDateDesc).slice(0, 6)} />
