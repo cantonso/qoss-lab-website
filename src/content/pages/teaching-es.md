@@ -47,6 +47,8 @@ Escríbenos si quieres hacer tu TFG o TFM con experimentos de óptica cuántica 
 - **Fotónica topológica** — interacción luz-materia en redes micrométricas de semiconductores: polarización, coherencia y más
 - **Fluidos cuánticos de luz a temperatura ambiente** — perovskitas en microcavidades, polaritones excitónicos y láseres pulsados a 400 nm
 
+<div class="two" style="gap:20px;margin-top:14px"><figure style="margin:0"><img class="wimg" src="/img/ppktp-setup.jpg" alt="Mesa óptica con la fuente Sagnac de fotones entrelazados con ppKTP" loading="lazy"><figcaption class="muted" style="font-size:13px;margin-top:8px">La fuente Sagnac de ppKTP en la mesa óptica: óptica de bombeo, el lazo de Sagnac y el análisis de polarización y acoplo a fibra de los dos fotones.</figcaption></figure><figure style="margin:0"><img class="wimg" src="/img/ppktp-sagnac-oven.jpg" alt="Detalle del interferómetro de Sagnac con el horno del cristal ppKTP y el divisor de haz polarizador" loading="lazy"><figcaption class="muted" style="font-size:13px;margin-top:8px">Detalle del interferómetro de Sagnac: el horno con control de temperatura (carcasa negra) que aloja el cristal ppKTP, junto al divisor de haz polarizador de doble longitud de onda.</figcaption></figure></div>
+
 ## Prácticas externas y becas de iniciación
 
 Escríbenos si quieres hacer prácticas externas curriculares: con tiempo suficiente, las diseñamos juntos según tus intereses. Para iniciarte en la investigación durante 4.º (contacta al final de 3.º):

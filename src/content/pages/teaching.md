@@ -47,6 +47,8 @@ Contact us if you'd like to do your TFG or TFM on quantum optics experiments —
 - **Topological photonics** — light–matter interaction in micrometric semiconductor lattices: polarisation, coherence and more
 - **Quantum fluids of light at room temperature** — perovskites in photonic microcavities, exciton-polaritons, pulsed 400 nm lasers
 
+<div class="two" style="gap:20px;margin-top:14px"><figure style="margin:0"><img class="wimg" src="/img/ppktp-setup.jpg" alt="Optical table with the ppKTP Sagnac entangled-photon source" loading="lazy"><figcaption class="muted" style="font-size:13px;margin-top:8px">The ppKTP Sagnac source on the optical table: pump optics, the Sagnac loop, and polarisation analysis and fibre coupling for the two photons.</figcaption></figure><figure style="margin:0"><img class="wimg" src="/img/ppktp-sagnac-oven.jpg" alt="Detail of the Sagnac interferometer with the ppKTP crystal oven and the polarising beamsplitter" loading="lazy"><figcaption class="muted" style="font-size:13px;margin-top:8px">Detail of the Sagnac interferometer: the temperature-controlled oven (black housing) holding the ppKTP crystal, next to the dual-wavelength polarising beamsplitter.</figcaption></figure></div>
+
 ## Prácticas externas & research grants
 
 Contact us for “PE curriculares” — with enough time we can design one around your interests. To start research in your 4th year (contact us at the end of the 3rd):
