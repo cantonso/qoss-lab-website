@@ -32,3 +32,5 @@ Techniques: micro-photoluminescence (cryogenic and room temperature); Michelson 
 - [Höfling group](https://www.physik.uni-wuerzburg.de/tep/team/head-of-chair/prof-dr-sven-hoefling/) — Univ. Würzburg (Germany)
 - [Aymeric Delteil](https://www.gemac.uvsq.fr/m-aymeric-delteil) — [Nanostructures & colour centres team](https://www.gemac.uvsq.fr/nanostructures-centres-colores), GEMaC, CNRS / UVSQ, Université Paris-Saclay (France)
 - [Zhiliang Yuan](http://en.baqis.ac.cn/people/detail/?cid=1193) — Beijing Academy of Quantum Information Sciences (China)
+- [Meera Parish](https://research.monash.edu/en/persons/meera-parish/) & Jesper Levinsen — Monash University (Australia)
+- [Castellanos-Gómez group](https://sites.google.com/view/2dmaterialsanddevices) — ICMM-CSIC, Madrid (Spain)
